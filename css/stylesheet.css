@@ -1,0 +1,65 @@
+/*
+	Elements properties definition
+*/
+
+html, body {
+
+	background-color: #000000;
+
+}
+
+h1 {
+
+}
+
+/*
+	IDs properties definition
+*/
+
+#city-name {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #000000;
+	font-weight: 400;
+}
+
+#btn-submit {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 100%);
+	color: #000000;
+}
+
+/*
+	Classes properties definition
+*/
+
+.title-container {
+	background-color: orange;
+	text-align: center;
+/*;	color: #A2A2A2;*/
+	color: #FFFFFF;
+	text-shadow: 5px solid #FFFFFF;
+	margin: 5px, 100px, 5px, 100px;
+	border: 5px solid #FFFFFF;
+	top: 100px;
+	margin-left: 50px;
+	margin-right: 50px;
+	border-radius: 8px;
+}
+
+.form-container {
+
+	height: 150px;
+	margin-top: 10%;
+	background-color: orange;
+	border: 5px solid #FFFFFF;
+	border-radius: 8px;
+
+}
+
+.container-fluid {
+}
