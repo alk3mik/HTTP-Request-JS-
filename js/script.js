@@ -1,6 +1,7 @@
 var xhr = new XMLHttpRequest();
 // var url = "http://localhost:3000/posts";
-var url = "http://openweathermap.org/api";
+// var url = "http://openweathermap.org/api";
+var url = "api.openweathermap.org/data/2.5/weather?q=London,uk";
 
 /*
 	The following lines are for POST
@@ -39,29 +40,35 @@ function displayCityWeather() {
 	
 		xhr.onreadystatechange = function() {
 
+// The *readyState* method of XMLHttpRequest can return 5 values, numbered as 0, 1, 2, 3, 4 .
+
+
     		if (xhr.readyState === XMLHttpRequest.DONE) {
 
-    			if (xhr.status === 200) {
+//    			if (xhr.status === 200) {
+// But, if one wants to include all the error codes one has:
+    			if ((xhr.status >= 200 && xhr.status <= 300) || xhr.status === 304) {
 
 // The JavaScript function JSON.parse(text) can be used to convert a JSON text into a JavaScript object:
 
-        			var data = JSON.parse(xhr.responseText);
-//        			alert(data);
+//        			var data = JSON.parse(xhr.responseText);
+        			var data = xhr.responseText;
+        			alert(data);
 //        			console.log(data);
-					document.getElementById("demo").innerHTML = "AUTHOR: " + data.author + "<br>" + "TITLE: " + data.title + "<br>" + 
-																"CONTENT: " + data.content + "<br>" + "TAGS: " + data.tags + "<br>" +
-																"ID: " + data.id + "<br>";
+//					document.getElementById("demo").innerHTML = "AUTHOR: " + data.author + "<br>" + "TITLE: " + data.title + "<br>" + 
+//																"CONTENT: " + data.content + "<br>" + "TAGS: " + data.tags + "<br>" +
+//																"ID: " + data.id + "<br>";
 
 		      	} else {
 
-    		    	alert("Une erreur s'est produite.");
+    		    	alert("Something did not work.");
 
       			}
     		}
 
 		};
 
-		xhr.open('GET', url + "/79");   
+		xhr.open('GET', url, true);
 		xhr.send();
 
 	}

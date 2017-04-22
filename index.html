@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <!--xxxx The above attribute *lang* allows me to use characters with accents, like in French and Italian languages -->
+  
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,14 +10,23 @@
 	-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <title>HTTP Request (JS)</title>
 
     <!-- Bootstrap -->
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- My CCS file -->
-    <link href="stylesheet.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom CSS file -->
+
+    <link href="css/stylesheet.css" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,6 +34,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+
   <body>
 
 
@@ -31,46 +42,54 @@
 	Bootstrap requires a containing element to wrap site contents and house our grid system. You may choose one of two containers to use in your projects. Note that, due to padding and more, neither container is nestable. Use *.container* for a responsive fixed width container.
 -->
 
-<div class="container-fluid">
+	<div class="container-fluid">
+		
+		<div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="title-container">
+          <h1>
+			     HTTP Request (JS)
+          </h1>
+        </div>
+      </div>
+		</div> <!-- .row -->
 	
-	<div class="row">
+		<div class="row">
 
-  		<div class="col-lg-4 col-md-4 col-sm-1 col-xs-0">
+			<div class="col-lg-4 col-md-4 col-sm-1 col-xs-0">
 
-  		</div>
+			</div>
 
-  		<div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
-		
-			<h1>
-            	HTTP Request (JS)
-        	</h1>
+			<div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
 
-        	<form>
+        <div class="form-container">
 
-        		<label for="fname">City</label>
-        		
-        		<input type="text" id="fname" name="City" placeholder="type the city name...">
+<!--				  <form name="inputform" action="somewhere" method="post"> -->
+<!--					 <label for="city-name" class="city-label">City</label> -->
+<!--          <form name="inputform" action="http://openweathermap.org/data/2.5" method="get"> -->
+          <form name="inputform" action="http://api.openweathermap.org/data/2.5" method="get">
 
-        		<input type="submit" onclick="displayCityWeather()" value="Submit">
-        	
-        	</form>
+					   <input type="text" id="city-name" name="weather" placeholder="type the city name...">
 
-        	<p id="demo"></p>
-		
-		</div>
+					   <input type="submit" id="btn-submit" onclick="displayCityWeather()" value="Submit">
 
-		<div class="col-lg-4 col-md-4 col-sm-1 col-xs-0">
+				  </form>
 
-  		</div>
+        </div>
 
-	</div> <!-- .row -->
+				<p id="demo"></p>
 
-</div> <!-- container-fluid -->
+			</div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+			<div class="col-lg-4 col-md-4 col-sm-1 col-xs-0">
+
+			</div>
+
+		</div> <!-- .row -->
+
+	</div> <!-- container-fluid -->
+
+<!--    <script src="js/script.js"></script> -->
+
   </body>
 </html>
