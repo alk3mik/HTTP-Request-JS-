@@ -68,23 +68,25 @@
 
 			<div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
 
-        <div class="form-container">
+				<div class="form-container">
 
-<!--				  <form name="inputform" action="somewhere" method="post"> -->
-<!--					 <label for="city-name" class="city-label">City</label> -->
-<!--          <form name="inputform" action="http://openweathermap.org/data/2.5" method="get"> -->
-             <legend class="lgnd">Current Weather</legend>
-             <form name="inputform" action="http://api.openweathermap.org/data/2.5/forcast" method="get">
+					<!--				  <form name="inputform" action="somewhere" method="post"> -->
+					<!--					 <label for="city-name" class="city-label">City</label> -->
+					<!--          <form name="inputform" action="http://openweathermap.org/data/2.5" method="get"> -->
+					<legend class="lgnd">Current Weather</legend>
+<!--					<form name="inputform" action="http://api.openweathermap.org/data/2.5/forcast" method="get"> -->
+					<form name="inputform">
 
-					   <input type="text" id="city-name" name="city" placeholder="type the city name...">
+						<input type="text" id="city-name" name="city" placeholder="type the city name...">
 
-					   <input type="submit" id="btn-submit" onclick="displayCityWeather()" value="Submit">
+<!--						<input type="submit" id="btn" onclick="displayCityWeather()" value="Submit">-->
+						<input type="submit" id="btn" value="Submit">
 
-				  </form>
+					</form>
 
-        </div>
+				</div>
 
-				<p id="demo"></p>
+				<p id="forecast"></p>	
 
 			</div>
 
@@ -96,7 +98,7 @@
 
 	</div> <!-- container-fluid -->
 
-<!--    <script src="js/script.js"></script> -->
+    <script src="js/script.js"></script>
 
   </body>
 </html>
