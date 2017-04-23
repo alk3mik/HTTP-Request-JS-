@@ -8,10 +8,10 @@ html, body {
 
 }
 
-h1 {
-
+h2 {
+	color: grey;
 }
-
+	
 /*
 	IDs properties definition
 */
@@ -49,6 +49,10 @@ h1 {
 	margin-left: 50px;
 	margin-right: 50px;
 	border-radius: 8px;
+}
+
+.lgnd {
+	color: #FFFFFF;
 }
 
 .form-container {
