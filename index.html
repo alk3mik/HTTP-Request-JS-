@@ -47,9 +47,15 @@
 		<div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="title-container">
+          
           <h1>
 			     HTTP Request (JS)
           </h1>
+          
+          <h2>
+            Type in the following form the name of the city you want to know the current weather of
+          </h2>
+        
         </div>
       </div>
 		</div> <!-- .row -->
@@ -67,9 +73,10 @@
 <!--				  <form name="inputform" action="somewhere" method="post"> -->
 <!--					 <label for="city-name" class="city-label">City</label> -->
 <!--          <form name="inputform" action="http://openweathermap.org/data/2.5" method="get"> -->
-          <form name="inputform" action="http://api.openweathermap.org/data/2.5" method="get">
+             <legend class="lgnd">Current Weather</legend>
+             <form name="inputform" action="http://api.openweathermap.org/data/2.5/forcast" method="get">
 
-					   <input type="text" id="city-name" name="weather" placeholder="type the city name...">
+					   <input type="text" id="city-name" name="city" placeholder="type the city name...">
 
 					   <input type="submit" id="btn-submit" onclick="displayCityWeather()" value="Submit">
 
