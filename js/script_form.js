@@ -26,11 +26,12 @@ btn.addEventListener("click", function(event) {
 
 	if (xhr) {
 
-		var cityName = '?q=' + document.getElementById("city-name").value;
+//		var cityName = '?q=' + document.getElementById("city-name").value;
 
-		var apiKey = '&appid=' + document.getElementById("appid").value;
+//		var apiKey = '&appid=' + document.getElementById("appid").value;
 
-		xhr.open('GET', url + cityName + apiKey, true);
+//		xhr.open('GET', url + cityName + apiKey, true);
+		xhr.open('GET', url, true);
 		
 		xhr.onreadystatechange = function() {
 
