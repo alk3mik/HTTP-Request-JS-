@@ -80,7 +80,8 @@ btn.addEventListener("click", function(event) {
 		var apiKey = '&appid=' + document.getElementById("appid").value;
 
 		xhr.open('GET', url + cityName + apiKey, true);
-		xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+//		xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+//		xhr.setRequestHeader('Content-Type', '*/*');
 		
 		xhr.onreadystatechange = function() {
 
