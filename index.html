@@ -70,23 +70,47 @@
 
 				<div class="form-container">
 
-					<!--				  <form name="inputform" action="somewhere" method="post"> -->
-					<!--					 <label for="city-name" class="city-label">City</label> -->
+					<!--		  <form name="inputform" action="somewhere" method="post"> -->
+					<!--		  <label for="city-name" class="city-label">City</label> -->
 					<!--          <form name="inputform" action="http://openweathermap.org/data/2.5" method="get"> -->
-					<legend class="lgnd">Current Weather</legend>
-<!--					<form name="inputform" action="http://api.openweathermap.org/data/2.5/forcast" method="get"> -->
-					<form name="inputform">
+<!--					<form name="inputform" action="http://api.openweathermap.org/data/2.5/forecast" method="get"> -->
+					<form action="" method="get">
+<!--					<form> -->
+<!--
+						<fieldset>
 
-						<input type="text" id="city-name" name="city" placeholder="type the city name...">
+							<legend class="lgnd">Your City Current Weather</legend>
+
+							<label for="city-name">City Name:</label>
+-->
+							<!--
+								The *name* attribute of text input is the one appended to the URL through an "?", hence
+								in the following case we have: URL?q={City} .
+							-->
+							<input type="text" id="city-name" name="q" placeholder="type the city name...">
+
+							<!--
+								The same for the attribute *name* of hidden input, but we specify its *value* as
+								input. Everything will appended to the previous modified URL (URL?q={City}) through
+								an "&", resulting in: URL?q={City}&appid=e94f99a51481de0a1ca44714266f918c .
+								This is necessary to append the value of a key (value="e94f99a51481de0a1ca44714266f918c")
+								to the contacted URL; this key is the one requested from the API of the website
+								http://openweathermap.org/ to the registered users.
+							-->
+							<input type="hidden" name="appid" value="e94f99a51481de0a1ca44714266f918c">
 
 <!--						<input type="submit" id="btn" onclick="displayCityWeather()" value="Submit">-->
-						<input type="submit" id="btn" value="Submit">
-
+							<input type="submit" id="btn" value="Submit">
+<!--
+						</fieldset>
+-->
 					</form>
+
+					<!-- <button id="clickme">click me!</button> -->
 
 				</div>
 
-				<p id="forecast"></p>	
+				<p id="forecast"></p>
 
 			</div>
 
