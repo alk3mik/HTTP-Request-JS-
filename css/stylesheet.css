@@ -11,6 +11,17 @@ html, body {
 h2, h3 {
 	color: #474747;
 }
+
+h4 {
+	color: #FFFFFF;
+	background-color: #474747;
+	position: absolute;
+	width: 40%;
+	height: 30%;
+	left: 50%;
+	transform: translate(-50%, -10%);
+	border-radius: 6px;
+}
 	
 /*
 	IDs properties definition
