@@ -17,10 +17,11 @@ h4 {
 	background-color: #474747;
 	position: absolute;
 	width: 40%;
-	height: 30%;
+	height: 37%;
 	left: 50%;
 	transform: translate(-50%, -10%);
 	border-radius: 6px;
+	border: 3px double #FFFFFF;
 }
 	
 /*
