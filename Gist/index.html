@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!--xxxx The above attribute *lang* allows me to use characters with accents, like in French and Italian languages -->
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	<!--
+	To ensure proper rendering and touch zooming, add the viewport meta tag to your <head>
+	-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <title>HTTP Request (JS)</title>
+
+    <!-- Bootstrap -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom CSS file -->
+<!--
+    <link href="css/stylesheet.css" rel="stylesheet">
+-->
+
+    <style>
+/*
+	Elements properties definition
+*/
+
+html, body {
+
+	background-color: #000000;
+
+}
+
+h2, h3 {
+	color: #474747;
+}
+
+h4 {
+	color: #FFFFFF;
+	background-color: #474747;
+	position: absolute;
+	width: 40%;
+	height: 20%;
+	left: 50%;
+	transform: translate(-50%, -10%);
+	border-radius: 6px;
+	border: 3px double #FFFFFF;
+}
+	
+/*
+	IDs properties definition
+*/
+
+#city-name {
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #000000;
+	font-weight: 400;
+}
+
+#btn {
+	position: absolute;
+	top: 37%;
+	left: 50%;
+	transform: translate(-50%, 100%);
+	color: #000000;
+}
+
+/*
+	Classes properties definition
+*/
+
+.title-container {
+	background-color: orange;
+	text-align: center;
+/*;	color: #A2A2A2;*/
+	color: #FFFFFF;
+	text-shadow: 5px solid #FFFFFF;
+	margin: 5px, 100px, 5px, 100px;
+	border: 5px solid #FFFFFF;
+	top: 100px;
+	margin-left: 50px;
+	margin-right: 50px;
+	border-radius: 8px;
+}
+
+/*
+.lgnd {
+	color: #FFFFFF;
+}
+*/
+
+.form-container {
+
+	height: 150px;
+	margin-top: 5%;
+	background-color: orange;
+	border: 5px solid #FFFFFF;
+	border-radius: 8px;
+
+}
+
+.forecast-container {
+	
+	text-align: center;
+	height: 250px;
+	margin-top: 5%;
+	background-color: orange;
+	border: 5px solid #FFFFFF;
+	border-radius: 8px;
+}
+
+.container-fluid {
+}
+	
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+
+<!--
+	Bootstrap requires a containing element to wrap site contents and house our grid system. You may choose one of two containers to use in your projects. Note that, due to padding and more, neither container is nestable. Use *.container* for a responsive fixed width container.
+-->
+
+	<div class="container-fluid">
+
+		<div class="row">
+			
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				
+				<div class="title-container">
+          
+          			<h1>
+			    		HTTP Request (JS)
+          			</h1>
+          
+    	      		<h2>
+        	    		Type in the following form the name of the city you want to know the current temperature of
+          			</h2>
+        
+      			</div>
+
+		    </div>
+
+		</div> <!-- .row -->
+	
+		<div class="row">
+
+			<div class="col-lg-4 col-md-4 col-sm-1 col-xs-0">
+
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
+
+				<div class="form-container">
+
+							<input type="text" id="city-name" name="q" placeholder="type the city name...">
+
+							<!--
+								The same for the attribute *name* of hidden input, but we specify its *value* as
+								input. Everything will appended to the previous modified URL (URL?q={City}) through
+								an "&", resulting in: URL?q={City}&appid=e94f99a51481de0a1ca44714266f918c .
+								This is necessary to append the value of a key (value="e94f99a51481de0a1ca44714266f918c")
+								to the contacted URL; this key is the one requested from the API of the website
+								http://openweathermap.org/ to the registered users.
+							-->
+							<input type="hidden" id="appid" name="appid" value="e94f99a51481de0a1ca44714266f918c">
+
+							<input type="submit" id="btn" value="Submit">
+
+				</div>
+
+
+
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-1 col-xs-0">
+
+			</div>
+
+		</div> <!-- .row -->
+
+		<div class="row">
+
+			<div class="col-lg-4 col-md-4 col-sm-1 col-xs-0">
+
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-10 col-xs-12">
+
+				<div class="forecast-container">
+					
+					<h3>
+        	    		Current Temperature
+          			</h3>
+
+					<h4 id="forecast"></h4>
+				
+				</div>
+
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-1 col-xs-0">
+
+			</div>
+
+		</div> <!-- .row -->
+
+	</div> <!-- container-fluid -->
+
+    <script>
+// Apparently the temperatures are given in Kelvin.
+// Knowing that the temperature in Celsius degrees is given by
+// tempC = tempK - 273.15 ,
+// we define the following constant:
+//
+const kelv = 273.15;
+
+var forecastContainer = document.getElementById("forecast");
+
+var btn = document.getElementById("btn");
+
+btn.addEventListener("click", function(event) {
+
+	//event.preventDefault();
+
+	var xhr = new XMLHttpRequest();
+	var url = "http://api.openweathermap.org/data/2.5/weather";
+	//var url = "http://api.openweathermap.org/data/2.5/weather?q=London&appid=e94f99a51481de0a1ca44714266f918c";
+	//
+	// Free on-line JSON file to be used as exemple
+	//var url = "http://mysafeinfo.com/api/data?list=englishmonarchs&format=json";
+
+	/*
+		The following lines are for GET
+	*/
+
+	if (xhr) {
+
+		var cityName = '?q=' + document.getElementById("city-name").value;
+
+		var apiKey = '&appid=' + document.getElementById("appid").value;
+
+		xhr.open('GET', url + cityName + apiKey, true);
+		
+		xhr.onreadystatechange = function() {
+
+	// The *readyState* method of XMLHttpRequest can return 5 values, numbered as 0, 1, 2, 3, 4 .
+
+
+			if (xhr.readyState === XMLHttpRequest.DONE) {
+
+	//    			if (xhr.status === 200) {
+	// But, if one wants to include all the error codes one has:
+				if ((xhr.status >= 200 && xhr.status <= 300) || xhr.status == 304) {
+
+					var data = xhr.responseText;
+
+	//				console.log(data);
+
+	// The JavaScript function JSON.parse(text) can be used to convert a JSON text into a JavaScript object:
+	       			var jsonData = JSON.parse(xhr.responseText);
+
+	//      			console.log(kelv, jsonData.main.temp, typeof(jsonData.main.temp), jsonData.main.temp - kelv);
+
+	       			var tempC = jsonData.main.temp - kelv;
+
+	// There too many decimal digits. To round them off we used the following trick,
+	// taken from http://www.jacklmoore.com/notes/rounding-in-javascript/ :
+					tempC = Number(Math.round(tempC+'e2')+'e-2');
+
+					forecastContainer.innerHTML = "City: " + jsonData.name + "<br>" + "<br>" + "Temperature: " + tempC + " °C";
+
+     //   			console.log(jsonData);
+
+				} else {
+
+					alert("Something did not work...");
+
+				}
+			
+			}
+
+		};
+
+	
+		xhr.send();
+
+	}
+
+	forecastContainer.innerHTML = "Processing...";
+
+});
+</script>
+
+  </body>
+</html>
