@@ -8,7 +8,7 @@ html, body {
 
 }
 
-h2 {
+h2, h3 {
 	color: #474747;
 }
 	
@@ -51,9 +51,11 @@ h2 {
 	border-radius: 8px;
 }
 
+/*
 .lgnd {
 	color: #FFFFFF;
 }
+*/
 
 .form-container {
 
@@ -63,6 +65,16 @@ h2 {
 	border: 5px solid #FFFFFF;
 	border-radius: 8px;
 
+}
+
+.forecast-container {
+	
+	text-align: center;
+	height: 150px;
+	margin-top: 10%;
+	background-color: orange;
+	border: 5px solid #FFFFFF;
+	border-radius: 8px;
 }
 
 .container-fluid {
