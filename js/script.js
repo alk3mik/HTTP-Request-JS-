@@ -82,8 +82,6 @@ btn.addEventListener("click", function(event) {
 		xhr.open('GET', url + cityName + apiKey, true);
 		xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
 		
-
-
 		xhr.onreadystatechange = function() {
 
 	// The *readyState* method of XMLHttpRequest can return 5 values, numbered as 0, 1, 2, 3, 4 .
