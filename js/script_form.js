@@ -35,8 +35,8 @@ btn.addEventListener("click", function(event) {
 		
 		xhr.onreadystatechange = function() {
 
-	// The *readyState* method of XMLHttpRequest can return 5 values, numbered as 0, 1, 2, 3, 4 .
-
+	// The *readyState* method of XMLHttpRequest can return 5 values, numbered as 0, 1, 2, 3, 4 :
+        // 0:UNSENT 1:OPENED 2:HEADERS_RECEIVED 3:LOADING 4:DONE
 
 			if (xhr.readyState === XMLHttpRequest.DONE) {
 
